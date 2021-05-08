@@ -1,0 +1,70 @@
+<?php
+return [
+    'actions' =>'Action',
+    'ViewFullAndManage' => '完全な表示と管理',
+    'createdAt' => 'で作成',
+    'email' => 'Eメール',
+    'phone' => '電話',
+    'VAT' => '付加価値税',
+    'address' => '住所',
+    'reference' => '参照',
+    'name' => '名前',
+    'company'=>'会社',
+    'code' => 'コード',
+//
+    'categoryName' => '種別名',
+    'categoryCode' => 'カテゴリーコード',
+    'categoryDetails' => 'カテゴリーの詳細',
+//
+    'customerName' => '顧客名',
+    'amount' => '量',
+    'expenseNote'=> '経費メモ',
+    'by' => 'によって演奏された',
+//
+    'productName' => '商品名',
+    'productCode' => '製品コード',
+    'productCost' => '単価',
+    'productprice' => '単価',
+    'productQty' => '量',
+    'productAlertQty' => '少量アラート',
+//
+    'totalQty' => '総量',
+    'discountRate' => '割引率',
+    'discountAmount' => '割引額',
+    'taxRate' => '税率',
+    'taxAmount' => '課税額',
+    'shipping' => '運送',
+    'totalPayment' => 'お支払い総額',
+//
+    'chargeRate' => '充電率',
+    'chargeAmount' => '請求額',
+    'returnItems' => '返品',
+    'refundPrice' => '返品',
+    'refundable' => '払い戻し可能',
+//
+    'discountRate' => '割引率',
+    'discountAmount' =>'割引額',
+    'enterAmount' => '金額を入力します',
+    'payable' => '買掛金',
+    'change' => '変化する',
+    'totalPrice' => '合計金額',
+    'totalItems' => 'トータルアイテム',
+    'billerDetail' => 'ビラー詳細',
+//
+    'subcategoryCode' => 'サブカテゴリコード',
+    'subcategoryName' => 'サブカテゴリ名',
+    'subcategorydetails' => 'サブカテゴリの詳細',
+//
+    'taxTitle' => '税のタイトル',
+    'shartCode' => 'シャートコード',
+    'taxRate' => '税率',
+//
+    'key' => 'キーワード',
+    'saleOrders' => '販売注文',
+    'refundOrders' => '払い戻し注文',
+    'LPI' => "低価格指数",
+//
+    'paymentTitle' => '支払いタイトル',
+    'paymentCode' => '支払コード',
+    'paymentDetails' => '支払詳細',
+];

@@ -1,0 +1,124 @@
+<?php
+/**
+ * This file auto install codehas, using for next advance point of sale from version 1.88.
+ *
+ * @author Rose Finch <info.codehas@gmail.com>
+ */
+
+use Illuminate\Support\Facades\Artisan;
+
+require __DIR__ . '/../vendor/autoload.php';
+$app = include_once __DIR__ . '/../bootstrap/app.php';
+$kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
+$response = $kernel->handle(
+    $request = Illuminate\Http\Request::capture()
+);
+$lang = request('lang') ?? 'en';
+app()->setlocale($lang);
+if (request()->method() == 'POST' && request()->ajax()) {
+    $step = request('step');
+    switch ($step) {
+        case 'step0':
+            $database_host = request('database_host') ?? '127.0.0.1';
+            $database_name = request('database_name') ?? '';
+            $database_user = request('database_user') ?? '';
+            $database_password = request('database_password') ?? '';
+
+            try {
+                $mysqli = new mysqli($database_host, $database_user, $database_password, $database_name);
+            } catch (\Exception $e) {
+                echo json_encode(['error' => 1, 'msg' => $e->getMessage()]);
+                exit();
+            }
+            echo json_encode(['error' => 0, 'msg' => 'Database connection success !']);
+            break;
+        case 'step1':
+            $domain = request()->getSchemeAndHttpHost();
+            $database_host = request('database_host') ?? '127.0.0.1';
+            $database_port = request('database_port') ?? '3306';
+            $database_name = request('database_name') ?? '';
+            $database_user = request('database_user') ?? '';
+            $database_password = request('database_password') ?? '';
+            $admin_url = request('admin_url') ?? '';
+            try {
+                $getEnv = file_get_contents(base_path() . '/.env.example');
+                $getEnv = str_replace('your_domain', $domain, $getEnv);
+                $getEnv = str_replace('database_host', $database_host, $getEnv);
+                $getEnv = str_replace('database_port', $database_port, $getEnv);
+                $getEnv = str_replace('database_name', $database_name, $getEnv);
+                $getEnv = str_replace('database_user', $database_user, $getEnv);
+                $getEnv = str_replace('database_password', $database_password, $getEnv);
+                $env = fopen(base_path() . "/.env", "w") or die(json_encode(['error' => 1, 'msg' => 'Cant not open file .env.example']));
+                fwrite($env, $getEnv);
+                fclose($env);
+
+                Artisan::call('config:clear');
+                Artisan::call('optimize:clear');
+                Artisan::call('view:clear');
+                Artisan::call('cache:clear');
+            } catch (\Exception $e) {
+                echo json_encode(['error' => 1, 'msg' => $e->getMessage()]);
+                exit();
+            }
+            echo json_encode(['error' => 0, 'msg' => '.env Generated successfully file!']);
+            break;
+        case 'step2':
+            try {
+                Artisan::call('key:generate');
+            } catch (\Exception $e) {
+                echo json_encode(['error' => 1, 'msg' => $e->getMessage()]);
+                exit;
+            }
+            echo json_encode(['error' => 0, 'msg' => 'Generate API key success!']);
+            break;
+        case 'step3':
+            try {
+                Artisan::call('migrate');
+                Artisan::call('db:seed');
+            } catch (\Exception $e) {
+                echo json_encode(['error' => 1, 'msg' => explode("\n", $e->getMessage())[0]]);
+                exit();
+            }
+            echo json_encode(['error' => 0, 'msg' => 'Successful initialization!']);
+            break;
+        case 'step4':
+            try {
+                foldes_permissions();
+                try {
+                    rename(base_path() . '/public/install.php', base_path() . '/public/install.next');
+                } catch (\Exception $e) {
+                    echo json_encode(['error' => 1, 'msg' => 'Can not rename file install.php. Please remove or rename it!']);
+                    exit();
+                }
+            } catch (\Exception $e) {
+                echo json_encode(['error' => 1, 'msg' => $e->getMessage()]);
+                exit();
+            }
+            Artisan::call('config:cache');
+            Artisan::call('storage:link');
+
+            echo json_encode(['error' => 0, 'msg' => 'Setting permission success!']);
+            break;
+        default:
+            // code...
+            break;
+    }
+} else {
+    if (!is_file(base_path() . '/.env')) {
+        echo view('install', ['title' => 'Install Next POS']);
+    } else {
+        Artisan::call('migrate');
+        Artisan::call('optimize:clear');
+        rename(base_path() . '/public/install.php', base_path() . '/public/install.next');
+    }
+    exit();
+}
+
+function foldes_permissions()
+{
+    $foldes = [
+        base_path() . '/storage/',
+        base_path() . '/public',
+    ];
+    exec('chmod o+w -R ' . implode(' ', $foldes));
+}

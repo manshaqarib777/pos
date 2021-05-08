@@ -1,0 +1,70 @@
+<?php
+return [
+    'actions' =>'Action',
+    'ViewFullAndManage' => 'مکمل دیکھیں اور انتظام کریں',
+    'createdAt' => 'پر تشکیل دیا گیا',
+    'email' => 'ای میل',
+    'phone' => 'فون',
+    'VAT' => 'ویلیو ایڈڈ ٹیکس',
+    'address' => 'پتہ',
+    'reference' => 'حوالہ',
+    'name' => 'نام',
+    'company'=>'کمپنی',
+    'code' => 'کوڈ',
+//
+    'categoryName' => 'قسم کا نام',
+    'categoryCode' => 'زمرہ کوڈ',
+    'categoryDetails' => 'زمرہ تفصیلات',
+//
+    'customerName' => 'گاہک کا نام',
+    'amount' => 'رقم',
+    'expenseNote'=> 'اخراجات نوٹ',
+    'by' => 'بذریعہ پرفارم',
+//
+    'productName' => 'پروڈکٹ کا نام',
+    'productCode' => 'پروڈکٹ کوڈ',
+    'productCost' => 'یونٹ لاگت',
+    'productprice' => 'اکائی قیمت',
+    'productQty' => 'مقدار',
+    'productAlertQty' => 'کم مقدار کا انتباہ',
+//
+    'totalQty' => 'کل مقدار',
+    'discountRate' => 'رعائتی قیمت',
+    'discountAmount' => 'چھوٹ کی رقم',
+    'taxRate' => 'ٹیکس کی شرح',
+    'taxAmount' => 'ٹیکس کی رقم',
+    'shipping' => 'شپنگ',
+    'totalPayment' => 'کل ادائیگی',
+//
+    'chargeRate' => 'چارج ریٹ',
+    'chargeAmount' => 'چارج کی رقم',
+    'returnItems' => 'لوٹی ہوئی اشیا',
+    'refundPrice' => 'رقم کی واپسی کی قیمت',
+    'refundable' => 'واپسی',
+//
+    'discountRate' => 'رعائتی قیمت',
+    'discountAmount' =>'چھوٹ کی رقم',
+    'enterAmount' => 'رقم درج کریں',
+    'payable' => 'واجب الدا',
+    'change' => 'بقایا',
+    'totalPrice' => 'کل قیمت',
+    'totalItems' => 'کل اشیا',
+    'billerDetail' => 'بلر تفصیل',
+//
+    'subcategoryCode' => 'ذیلی زمرہ کا کوڈ',
+    'subcategoryName' => 'ذیلی زمرہ نام',
+    'subcategorydetails' => 'ذیلی زمرہ تفصیلات',
+//
+    'taxTitle' => 'ٹیکس کا عنوان',
+    'shartCode' => 'شارٹ کوڈ',
+    'taxRate' => 'ٹیکس کی شرح',
+//
+    'key' => 'مطلوبہ الفاظ',
+    'saleOrders' => 'فروخت کے احکامات',
+    'refundOrders' => 'رقم کی واپسی کا آرڈر',
+    'LPI' => "کم قیمت کا اشاریہ",
+//
+    'paymentTitle' => 'ادائیگی کا عنوان',
+    'paymentCode' => 'ادائیگی کا کوڈ',
+    'paymentDetails' => 'ادائیگی کی تفصیلات',
+];

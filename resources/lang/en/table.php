@@ -1,0 +1,70 @@
+<?php
+return [
+    'actions' =>'Action',
+    'ViewFullAndManage' => 'View Full And Manage',
+    'createdAt' => 'Created at',
+    'email' => 'Email',
+    'phone' => 'Phone',
+    'VAT' => 'VAT',
+    'address' => 'Address',
+    'reference' => 'Reference',
+    'name' => 'Name',
+    'company'=>'Company',
+    'code' => 'Code',
+//
+    'categoryName' => 'Category Name',
+    'categoryCode' => 'Category Code',
+    'categoryDetails' => 'Category Details',
+//
+    'customerName' => 'Customer Name',
+    'amount' => 'Amount',
+    'expenseNote'=> 'Expense Note',
+    'by' => 'Performed by',
+//
+    'productName' => 'Product Name',
+    'productCode' => 'Product Code',
+    'productCost' => 'Unit Cost',
+    'productprice' => 'Unit Price',
+    'productQty' => 'Quantity',
+    'productAlertQty' => 'Low Qty Alert',
+//
+    'totalQty' => 'Total Qty',
+    'discountRate' => 'Discount Rate',
+    'discountAmount' => 'Discount Amount',
+    'taxRate' => 'Tax Rate',
+    'taxAmount' => 'Tax Amount',
+    'shipping' => 'Shipping',
+    'totalPayment' => 'Total Payment',
+//
+    'chargeRate' => 'Charge Rate',
+    'chargeAmount' => 'Charge Amount',
+    'returnItems' => 'Returned Items',
+    'refundPrice' => 'Refund Price',
+    'refundable' => 'Refundable',
+//
+    'discountRate' => 'Discount Rate',
+    'discountAmount' =>'Discount Amount',
+    'enterAmount' => 'Enter Amount',
+    'payable' => 'Payable',
+    'change' => 'Change',
+    'totalPrice' => 'Total Price',
+    'totalItems' => 'Total Items',
+    'billerDetail' => 'Biller Detail',
+//
+    'subcategoryCode' => 'Subcategory Code',
+    'subcategoryName' => 'Subcategory Name',
+    'subcategorydetails' => 'Subcategory Details',
+//
+    'taxTitle' => 'Tax Title',
+    'shartCode' => 'Shart Code',
+    'taxRate' => 'Tax Rate',
+//
+    'key' => 'Key',
+    'saleOrders' => 'Sale Orders',
+    'refundOrders' => 'Refund Orders',
+    'LPI' => "Low Price Index",
+//
+    'paymentTitle' => 'Payment Title',
+    'paymentCode' => 'Payment Code',
+    'paymentDetails' => 'Payment Details',
+];

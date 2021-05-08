@@ -1,0 +1,70 @@
+<?php
+return [
+    'actions' =>'Action',
+    'ViewFullAndManage' => 'عرض كامل وإدارة',
+    'createdAt' => 'أنشئت في',
+    'email' => 'البريد الإلكتروني',
+    'phone' => 'هاتف',
+    'VAT' => 'ضريبة القيمة المضافة',
+    'address' => 'عنوان',
+    'reference' => 'مرجع',
+    'name' => 'اسم',
+    'company'=>'شركة',
+    'code' => 'الشفرة',
+//
+    'categoryName' => 'اسم التصنيف',
+    'categoryCode' => 'كود الفئة',
+    'categoryDetails' => 'تفاصيل الفئة',
+//
+    'customerName' => 'اسم الزبون',
+    'amount' => 'كمية',
+    'expenseNote'=> 'ملاحظة النفقات',
+    'by' => 'يؤديها',
+//
+    'productName' => 'اسم المنتج',
+    'productCode' => 'كود المنتج',
+    'productCost' => 'تكلفة الوحدة',
+    'productprice' => 'سعر الوحده',
+    'productQty' => 'كمية',
+    'productAlertQty' => 'تنبيه جودة منخفضة',
+//
+    'totalQty' => 'إجمالي الكمية',
+    'discountRate' => 'معدل الخصم',
+    'discountAmount' => 'مقدار الخصم',
+    'taxRate' => 'معدل الضريبة',
+    'taxAmount' => 'قيمة الضريبة',
+    'shipping' => 'الشحن',
+    'totalPayment' => 'المبلغ الإجمالي',
+//
+    'chargeRate' => 'نسبة الرسوم',
+    'chargeAmount' => 'مستوى الشحن',
+    'returnItems' => 'العناصر التي تم إرجاعها',
+    'refundPrice' => 'سعر الاسترداد',
+    'refundable' => 'قابلة للاسترداد',
+//
+    'discountRate' => 'معدل الخصم',
+    'discountAmount' =>'مقدار الخصم',
+    'enterAmount' => 'أدخل المبلغ',
+    'payable' => 'مستحق الدفع',
+    'change' => 'يتغيرون',
+    'totalPrice' => 'السعر الكلي',
+    'totalItems' => 'إجمالي العناصر',
+    'billerDetail' => 'تفاصيل الفاتح',
+//
+    'subcategoryCode' => 'رمز الفئة الفرعية',
+    'subcategoryName' => 'اسم الفئة الفرعية',
+    'subcategorydetails' => 'تفاصيل الفئة الفرعية',
+//
+    'taxTitle' => 'العنوان الضريبي',
+    'shartCode' => 'كود شارت',
+    'taxRate' => 'معدل الضريبة',
+//
+    'key' => 'الكلمة الرئيسية',
+    'saleOrders' => 'أوامر البيع',
+    'refundOrders' => 'أوامر الاسترداد',
+    'LPI' => "مؤشر السعر المنخفض",
+//
+    'paymentTitle' => 'عنوان الدفع',
+    'paymentCode' => 'كود الدفع',
+    'paymentDetails' => 'بيانات الدفع',
+];
