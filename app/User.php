@@ -14,7 +14,7 @@ class User extends Authenticatable
      @var array
      */
     protected $fillable = [
-    'name', 'email', 'password', 'phone', 'address', 'company', 'image', 'isActive','group_id','pin','log'
+    'name', 'email', 'password', 'phone', 'address', 'company', 'image', 'isActive','group_id','pin','log','country_id'
     ];
 
     /**
@@ -52,5 +52,9 @@ class User extends Authenticatable
     public function reports()
     {
         return $this->hasMany(Report::class);
+    }
+    public function country()
+    {
+        return $this->belongsTo(Country::class);
     }
 }
