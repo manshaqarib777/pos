@@ -12,6 +12,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // Generating Default actounts
+        $this->call(CurrenciesTableSeeder::class);
+        $this->call(CountriesTableSeeder::class);
         $this->call(MasterSeeder::class);
         $this->call(AdminAccountSeeder::class);
         $this->call(ManagerAccountSeeder::class);
