@@ -7,6 +7,7 @@ Route::get(
 );
 Route::get('/lang-{lang}.js', 'Controller@lang')->name('lang');
 
+
 Auth::routes();
 Route::group(
     ['middleware' => 'auth'],
