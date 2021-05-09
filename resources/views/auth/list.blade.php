@@ -23,6 +23,7 @@
                                 <th scope="row" class="th-width-10">{{ __('user.email') }}</th>
                                 <th scope="row" class="th-width-10">{{ __('user.phone') }}</th>
                                 <th scope="row" class="th-width-10">{{ __('user.company') }}</th>
+                                <th scope="row" class="th-width-25">{{ __('user.country') }}</th>
                                 <th scope="row" class="th-width-25">{{ __('user.address') }}</th>
                                 <th scope="row" class="th-width-10">{{ __('user.authPin') }}</th>
                                 <th scope="row">{{ __('user.action') }}</th>

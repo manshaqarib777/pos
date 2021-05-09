@@ -44,4 +44,6 @@ return [
 
     'viewPermissionsBatch' => 'View Permissions batch',
     'clickToUpdateUserAuthenticaterFor' => 'Click to Update User Authenticater for',
+    'country' => 'Country',
+
 ];
