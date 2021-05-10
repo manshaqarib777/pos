@@ -3,7 +3,7 @@
 {{__('settings.systemConfiguration')}}
 @endsection
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['links'=> [
+@include('partials.breadcrumbs',['links'=> [
 ['url' =>'','name' => __('settings.systemConfiguration')],
 ]])
 @endpush
@@ -44,7 +44,7 @@
 					</div>
 					<div class="tab-pane fade p-2" id="setting-logo" role="tabpanel" aria-labelledby="setting-logo-tab">
 						<div class="card-body">
-							@include('./partials.upload',['item'=>$setting,'routeLink'=>route('setting.image')])
+							@include('partials.upload',['item'=>$setting,'routeLink'=>route('setting.image')])
 						</div>
 					</div>
 					<div class="tab-pane fade p-2" id="setting-mail" role="tabpanel" aria-labelledby="setting-mail-tab">

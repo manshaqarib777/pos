@@ -3,7 +3,7 @@
 {{__('finance.annuallySaleChartSummary')}}
 @endsection
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['group'=>__('finance.finance'),'links'=> [
+@include('partials.breadcrumbs',['group'=>__('finance.finance'),'links'=> [
 ['url' =>'','name' => __('finance.saleChart')],
 ]])
 @endpush
@@ -209,5 +209,5 @@ barChartOptions.datasetFill = false;
 barChart.{{isset($_GET['type'])? ucwords($_GET['type']):'Line' }}(SaleChart, barChartOptions);
 });
 </script>
-@include('./partials.pageUrl',['pageLink'=>route('sale.detail')])
+@include('partials.pageUrl',['pageLink'=>route('sale.detail')])
 @endpush

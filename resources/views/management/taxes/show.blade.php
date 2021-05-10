@@ -4,7 +4,7 @@
 @endsection
 
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['links'=> [
+@include('partials.breadcrumbs',['links'=> [
 ['url' =>route('tax.index'),'name' => __('manage.manage')],
 ['url' =>'','name' => __('manage.tax.method.detail')],
 ]])
@@ -24,7 +24,7 @@
           </nav>
           <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active" id="nav-info" role="tabpanel" aria-labelledby="nav-info-tab">
-               @include('./partials.buttons',[
+               @include('partials.buttons',[
                   'allLink'=>route('tax.index'),
                   'editLink'=>route('tax.edit',$tax->id),
                   'destroyLink' =>route('tax.destroy',$tax->id)
@@ -54,10 +54,10 @@
               </table>
             </div>
             <div class="tab-pane fade" id="nav-orders" role="tabpanel" aria-labelledby="nav-orders-tab">
-             @include('./partials.purchases.orders',['orders'=>$tax->purchases])
+             @include('partials.purchases.orders',['orders'=>$tax->purchases])
             </div>
             <div class="tab-pane fade" id="nav-products" role="tabpanel" aria-labelledby="nav-products-tab">
-             @include('./partials.products.list',['products'=>$tax->products])
+             @include('partials.products.list',['products'=>$tax->products])
             </div>
           </div>
         </div>
@@ -66,4 +66,4 @@
   </div>
 </div>
 @endsection
-@include('./partials.pageUrl',['pageLink'=>route('tax.index')])
+@include('partials.pageUrl',['pageLink'=>route('tax.index')])

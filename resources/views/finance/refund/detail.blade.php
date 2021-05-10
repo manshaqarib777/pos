@@ -3,7 +3,7 @@
 {{__('finance.annullayRefundChart')}}
 @endsection
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['group'=>__('finance.finance'),'links'=> [
+@include('partials.breadcrumbs',['group'=>__('finance.finance'),'links'=> [
 ['url' =>'','name' => __('finance.refundChart')],
 ]])
 @endpush
@@ -199,5 +199,5 @@ barChartOptions.datasetFill = false;
 barChart.{{isset($_GET['type'])? ucwords($_GET['type']):'Line' }}(RefundChart, barChartOptions);
 });
 </script>
-@include('./partials.pageUrl',['pageLink'=>route('refund.detail')])
+@include('partials.pageUrl',['pageLink'=>route('refund.detail')])
 @endpush

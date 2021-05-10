@@ -3,7 +3,7 @@
  {{__('manage.paymentDetails')}}
 @endsection
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['links'=> [
+@include('partials.breadcrumbs',['links'=> [
 ['url' =>route('payment.index'),'name' => __('manage.manage')],
 ['url' =>'','name' => __('manage.paymentDetails')],
 ]])
@@ -29,7 +29,7 @@
                 <button class="btn btn-sm btn-default" data-toggle="tooltip" title="{{__('manage.toggleTitle')}}" type="submit">{{__('manage.toggle')}}</button>
               </form>
               @endsection
-              @include('./partials.buttons',[
+              @include('partials.buttons',[
               'allLink'=>route('payment.index'),
               'editLink'=>route('payment.edit',$payment->id),
               'destroyLink' =>route('payment.destroy',$payment->id)
@@ -76,4 +76,4 @@
   </div>
 </div>
 @endsection
-@include('./partials.pageUrl',['pageLink'=>route('payment.index')])
+@include('partials.pageUrl',['pageLink'=>route('payment.index')])

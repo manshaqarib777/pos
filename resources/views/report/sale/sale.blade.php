@@ -3,7 +3,7 @@
 {{__('report.saleOrdersReport')}}
 @endsection
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['group'=>__('report.reports'),'links'=> [
+@include('partials.breadcrumbs',['group'=>__('report.reports'),'links'=> [
 ['url' =>'','name' => __('report.saleReport')],
 ]])
 @endpush
@@ -12,7 +12,7 @@
     <div class="card">
         <div class="card-body">
             @if(isset($reportCard))
-            @include('./partials.reports.actions',[
+            @include('partials.reports.actions',[
             'genLink' => route('sale.gen'),
             'backLink' => route('sale.report'),
             'reportData' => $reportData,
@@ -134,7 +134,7 @@
                     </div>
                 </div>
             </div>
-            @include('./partials.reports.sale',['orders'=>$reportCard['list'],'linkable'=>true])
+            @include('partials.reports.sale',['orders'=>$reportCard['list'],'linkable'=>true])
             @else
             @push('saleType')
             <div class="form-group">
@@ -145,10 +145,10 @@
                 </select>
             </div>
             @endpush
-            @include('./partials.reports.builder',['action'=>route('sale.gen')])
+            @include('partials.reports.builder',['action'=>route('sale.gen')])
             @endif
         </div>
     </div>
 </div>
-@include('./partials.pageUrl',['pageLink'=>route('sale.report')])
+@include('partials.pageUrl',['pageLink'=>route('sale.report')])
 @endsection

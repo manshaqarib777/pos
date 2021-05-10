@@ -4,7 +4,7 @@
 @endsection
 
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['links'=> [
+@include('partials.breadcrumbs',['links'=> [
 ['url' =>route('customer.index'),'name' => __('manage.manage')],
 ['url' =>'','name' => __('manage.customer')],
 ]])
@@ -24,7 +24,7 @@
           <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 
-               @include('./partials.buttons',[
+               @include('partials.buttons',[
                   'allLink'=>route('customer.index'),
                   'editLink'=>route('customer.edit',$customer->id),
                   'destroyLink' =>route('customer.destroy',$customer->id)
@@ -101,5 +101,5 @@
     </div>
   </div>
 </div>
-@include('./partials.pageUrl',['pageLink'=>route('customer.index')])
+@include('partials.pageUrl',['pageLink'=>route('customer.index')])
 @endsection

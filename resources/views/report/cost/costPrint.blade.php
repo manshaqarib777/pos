@@ -24,5 +24,5 @@
         <td>{{$setting->currency}}{{$reportCard['total_payment']}}</td>
     </tr>
 </table>
-@include('./partials.reports.cost',['purchaseOrders'=>$reportCard['list']])
+@include('partials.reports.cost',['purchaseOrders'=>$reportCard['list']])
 @endsection

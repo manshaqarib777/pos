@@ -3,7 +3,7 @@
 {{__('home.welcomeHome')}}
 @endsection
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['links'=> [
+@include('partials.breadcrumbs',['links'=> [
 ['url' =>'','name' => __('home.welcomeHome')],
 ]])
 @endpush
@@ -101,7 +101,7 @@
                 <div class="card-body">
                     <form action="{{route('group.permission.request')}}" method="post">
                         {{csrf_field()}}
-                        @include('./partials/permission',['per'=>$per])
+                        @include('partials/permission',['per'=>$per])
                         <input type="hidden" name="user" value="{{auth()->user()->id}}">
                         <div class="form-group">
                             <label>{{__('home.WhyAreYouGoingToMake')}}</label>

@@ -4,7 +4,7 @@
 @endsection
 
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['links'=> [
+@include('partials.breadcrumbs',['links'=> [
 ['url' =>route('supplier.index'),'name' => __('manage.manage')],
 ['url' =>'','name' => __('manage.supplier.detail')],
 ]])
@@ -24,7 +24,7 @@
           </nav>
           <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active" id="supplier-info" role="tabpanel" aria-labelledby="supplier-info-tab">
-              @include('./partials.buttons',[
+              @include('partials.buttons',[
                   'allLink'=>route('supplier.index'),
                   'editLink'=>route('supplier.edit',$supplier->id),
                   'destroyLink' =>route('supplier.destroy',$supplier->id)
@@ -67,10 +67,10 @@
               </table>
             </div>
             <div class="tab-pane fade" id="supplier-orders" role="tabpanel" aria-labelledby="supplier-orders-tab">
-              @include('./partials.purchases.orders',['orders'=>$supplier->purchases])
+              @include('partials.purchases.orders',['orders'=>$supplier->purchases])
             </div>
             <div class="tab-pane fade" id="supplier-products" role="tabpanel" aria-labelledby="supplier-products-tab">
-              @include('./partials.products.list',['products'=>$supplier->products])
+              @include('partials.products.list',['products'=>$supplier->products])
             </div>
           </div>
         </div>
@@ -79,4 +79,4 @@
   </div>
 </div>
 @endsection
-@include('./partials.pageUrl',['pageLink'=>route('supplier.index')])
+@include('partials.pageUrl',['pageLink'=>route('supplier.index')])

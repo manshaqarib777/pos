@@ -3,7 +3,7 @@
 {{__('pos.openingNewRegister')}}
 @endsection
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['group'=>__('pos.pos'),'links'=> [
+@include('partials.breadcrumbs',['group'=>__('pos.pos'),'links'=> [
 ['url' =>'','name' => __('pos.newRegister')],
 ]])
 @endpush
@@ -47,5 +47,5 @@
         </div>
     </div>
 </div>
-@include('./partials.pageUrl',['pageLink'=>route('chapter.create')])
+@include('partials.pageUrl',['pageLink'=>route('chapter.create')])
 @endsection

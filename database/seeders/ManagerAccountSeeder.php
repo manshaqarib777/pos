@@ -1,4 +1,5 @@
 <?php
+namespace Database\Seeders;
 
 use App\Group;
 use App\Permission;
@@ -55,7 +56,7 @@ class ManagerAccountSeeder extends Seeder
             'email'             => 'manager@pos.codehas.com',
             'email_verified_at' => now(),
             'password'          => '$2y$10$k0TXIeH2QogJZ.rln.PETefA8uQlxE8vJbzOCsLw3I94ti/.E8Nyi',
-            'remember_token'    => Str::random(10),
+            'remember_token'    => \Str::random(10),
             'image'             => 'default_img/no_image.png',
             ]
         );

@@ -1,4 +1,4 @@
-@include('./partials.head')
+@include('partials.head')
 <body>
     <div class="bg-default pb-5">
         <div class="wrapper bg-default">
@@ -46,7 +46,7 @@
             <div class="content pt-5">
                 <div id="app" class="pt-2 bg-default">
                     <div id="alerts">
-                        @include('./partials.alerts')
+                        @include('partials.alerts')
                     </div>
                     <div class="card m-4 mt-2 p-2" id="chapterBoard">
                         <div class="card-body">
@@ -59,7 +59,7 @@
                                 Click <a href="{{route('chapter.show',$openedChapter)}}" target="_blank">here</a> to view full details (only for authorized persons).
                                 <p> Use same toggle button to move/switch back as well, Or click <a href="{{route('pos.index')}}" class="swicher">here</a> to force back.</p>
                             </div>
-                            @include('./partials.chapter',['chapter'=>$openedChapter,'info'=>$info])
+                            @include('partials.chapter',['chapter'=>$openedChapter,'info'=>$info])
                         </div>
                     </div>
                     <div id="posPortal">
@@ -70,8 +70,8 @@
             <!-- End Custom template -->
         </div>
     </div>
-    @include('./partials.copyright')
-    @include('./partials.jsDependencies')
+    @include('partials.copyright')
+    @include('partials.jsDependencies')
     <script src="{{asset('js/pos.js')}}"></script>
 </body>
 </html>

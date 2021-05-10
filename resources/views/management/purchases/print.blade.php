@@ -37,7 +37,7 @@
         </div>
       </div>
       <hr>
-     @include('./partials.purchases.details',['purchase'=>$purchase])
+     @include('partials.purchases.details',['purchase'=>$purchase])
 
        <hr>
       <div class="row text-left pt-4 only-print">

@@ -1,4 +1,5 @@
 <?php
+namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use PragmaRX\Countries\Package\Countries;
@@ -12,7 +13,7 @@ class CountriesTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
         \DB::table('countries')->delete();
         $countries = Countries::all()->pluck('name.common','postal');
         $data=[];

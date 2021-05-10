@@ -5,7 +5,7 @@
 @endsection
 
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['group'=>__('group.groups'),'links'=> [
+@include('partials.breadcrumbs',['group'=>__('group.groups'),'links'=> [
 ['url' =>route('group.index'),'name' => __('group.manageGroup')],
 ['url' =>'','name' => __('group.editGroup')],
 ]])
@@ -50,6 +50,6 @@
         </div>
     </div>
 </div>
-@include('./partials.pageUrl',['pageLink'=>route('user.index')])
+@include('partials.pageUrl',['pageLink'=>route('user.index')])
 @endsection
 

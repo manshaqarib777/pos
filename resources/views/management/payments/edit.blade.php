@@ -3,7 +3,7 @@
 {{__('manage.editPaymentMethod')}}
 @endsection
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['links'=> [
+@include('partials.breadcrumbs',['links'=> [
 ['url' =>route('payment.index'),'name' => __('manage.manage')],
 ['url' =>route('payment.show',$payment),'name' => __('manage.paymentDetails')],
 ['url' =>'','name' => __('manage.editPaymentMethod')],
@@ -20,5 +20,5 @@
         </div>
     </div>
 </div>
-@include('./partials.pageUrl',['pageLink'=>route('payment.index')])
+@include('partials.pageUrl',['pageLink'=>route('payment.index')])
 @endsection

@@ -3,7 +3,7 @@
 {{__('report.stockInventoryReport')}}
 @endsection
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['group'=>__('report.reports'),'links'=> [
+@include('partials.breadcrumbs',['group'=>__('report.reports'),'links'=> [
 ['url' =>'','name' => __('report.inventoryAlerts')],
 ]])
 @endpush
@@ -65,7 +65,7 @@
         <i class="fa fa-print" aria-hidden="true"></i> {{__('common.print')}}
       </a>
       <div class="table-responsive">
-        @include('./partials.reports.inventory',['products'=>$products])
+        @include('partials.reports.inventory',['products'=>$products])
       </div>
     </div>
   </div>

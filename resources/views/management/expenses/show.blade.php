@@ -3,7 +3,7 @@
 {{__('manage.expense.detail')}}
 @endsection
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['links'=> [
+@include('partials.breadcrumbs',['links'=> [
 ['url' =>route('expense.index'),'name' => __('manage.manage')],
 ['url' =>'','name' => __('manage.expense')],
 ]])
@@ -29,7 +29,7 @@
                                 @section('buttons')
                                 <a class="btn btn-sm btn-default" title="{{__('common.print')}}" href="{{route('expense.print',$expense->id)}}" ><i class="fa fa-print fa-fw" aria-hidden="true"></i>{{__('common.print')}}</a>
                                 @endsection
-                                @include('./partials.buttons',[
+                                @include('partials.buttons',[
                                 'allLink'=>route('expense.index'),
                                 'editLink'=>route('expense.edit',$expense->id),
                                 'destroyLink' =>route('expense.destroy',$expense->id)
@@ -82,5 +82,5 @@
         </div>
     </div>
 </div>
-@include('./partials.pageUrl',['pageLink'=>route('expense.index')])
+@include('partials.pageUrl',['pageLink'=>route('expense.index')])
 @endsection

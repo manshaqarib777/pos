@@ -5,7 +5,7 @@
 @endsection
 
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['links'=> [
+@include('partials.breadcrumbs',['links'=> [
 ['url' =>route('supplier.index'),'name' => __('manage.manage')],
 ['url' =>route('supplier.show',$supplier),'name' => __('manage.supplier.detail')],
 ['url' =>'','name' => __('manage.edit.supplier')],
@@ -20,4 +20,4 @@
     </div>
 </div>
 @endsection
-@include('./partials.pageUrl',['pageLink'=>route('supplier.index')])
+@include('partials.pageUrl',['pageLink'=>route('supplier.index')])

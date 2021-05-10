@@ -4,7 +4,7 @@
  {{__('manage.edit.warehouse.information')}}
 @endsection
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['links'=> [
+@include('partials.breadcrumbs',['links'=> [
 ['url' =>route('warehouse.index'),'name' => __('manage.manage')],
 ['url' =>route('warehouse.show',$warehouse),'name' => __('manage.warehouse.detail')],
 ['url' =>'','name' => __('manage.edit.warehouse')],
@@ -18,5 +18,5 @@
         </div>
     </div>
 </div>
-@include('./partials.pageUrl',['pageLink'=>route('warehouse.index')])
+@include('partials.pageUrl',['pageLink'=>route('warehouse.index')])
 @endsection

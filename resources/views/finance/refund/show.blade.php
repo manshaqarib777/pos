@@ -3,7 +3,7 @@
 {{__('pos.refundOrder')}} {{$refund->reference}}
 @endsection
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['group'=>__('pos.pos'),'links'=> [
+@include('partials.breadcrumbs',['group'=>__('pos.pos'),'links'=> [
 ['url' =>route('refund.index'),'name' => __('pos.refundsManagement')],
 ['url' =>'','name' => __('pos.refundsOrderDetail')],
 ]])
@@ -25,11 +25,11 @@
               <a class="btn btn-sm btn-default" title="{{__('pos.checkToPrintA4Title')}}" href="{{route('refund.printA4',$refund->id)}}" ><i class="fa fa-print fa-fw" aria-hidden="true"></i>{{__('common.print.a4')}}</a>
               <a class="btn btn-sm btn-default" title="{{__('pos.refundRecpiantPrint')}}" href="{{route('refund.print',$refund->id)}}" ><i class="fa fa-print fa-fw" aria-hidden="true"></i>{{__('common.print')}}</a>
               @endsection
-              @include('./partials.buttons',[
+              @include('partials.buttons',[
               'allLink'=>route('refund.index'),
               'destroyLink' =>route('refund.destroy',$refund)
               ])
-              @include('./partials.orderInfo',['order'=>$refund])
+              @include('partials.orderInfo',['order'=>$refund])
               <table class="table table-bordered table-striped">
                 <caption>Charges info</caption>
                 <tr>
@@ -74,7 +74,7 @@
                   <td>{{$refund->sale->payable}}</td>
                 </tr>
               </table>
-              @include('./partials.refunds.details',['refund'=>$refund,'clickAble'=>true])
+              @include('partials.refunds.details',['refund'=>$refund,'clickAble'=>true])
               <div class="alert alert-danger"><blockquote><strong>{{__('pos.staffNote')}}</strong> <small>{{$refund->staff_note}}</small></blockquote> </div>
             </div>
           </div>
@@ -83,5 +83,5 @@
     </div>
   </div>
 </div>
-@include('./partials.pageUrl',['pageLink'=>route('refund.index')])
+@include('partials.pageUrl',['pageLink'=>route('refund.index')])
 @endsection

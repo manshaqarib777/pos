@@ -1,16 +1,16 @@
-@include('./partials.head')
+@include('partials.head')
 <body>
 	<div class="wrapper">
 		<div class="main-header" data-background-color="{{$setting->skin}}">
 			<!-- Logo Header -->
-			@include('./partials.header')
+			@include('partials.header')
 			<!-- End Logo Header -->
 			<!-- Navbar Header -->
-			@include('./partials.navbar')
+			@include('partials.navbar')
 			<!-- End Navbar -->
 		</div>
 		<!-- Sidebar -->
-		@include('./partials.sidebar')
+		@include('partials.sidebar')
 		<div class="main-panel">
 			<div class="content">
 				<div class="page-inner">
@@ -22,16 +22,16 @@
 
 					</div>
 					<div class="row" id="app">
-						@include('./partials.alerts')
+						@include('partials.alerts')
 						@yield('content')
 					</div>
 				</div>
 
 			</div>
-		@include('./partials.copyright')
+		@include('partials.copyright')
 		</div>
 	</div>
 	<!--   Core JS Files   -->
-	@include('./partials.jsDependencies')
+	@include('partials.jsDependencies')
 </body>
 </html>

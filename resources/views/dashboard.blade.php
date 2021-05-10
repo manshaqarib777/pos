@@ -3,7 +3,7 @@
 {{__('dash.dashboard')}}
 @endsection
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['links'=> [
+@include('partials.breadcrumbs',['links'=> [
 ['url' =>'','name' => __('dash.dashboard')],
 ]])
 @endpush
@@ -12,10 +12,10 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="row row-card-no-pd mb-1 bg-default">
-                @include('./partials.dashboard',['title' => $dashboard['products'], 'heading'=>__('dash.totalProducts')])
-                @include('./partials.dashboard',['title' => $dashboard['Items'], 'heading'=>__('dash.totalItems')])
-                @include('./partials.dashboard',['title' => $dashboard['sales'], 'heading'=>__('dash.totalSales')])
-                @include('./partials.dashboard',['title' => $dashboard['refunds'], 'heading'=>__('dash.totalRefunds')])
+                @include('partials.dashboard',['title' => $dashboard['products'], 'heading'=>__('dash.totalProducts')])
+                @include('partials.dashboard',['title' => $dashboard['Items'], 'heading'=>__('dash.totalItems')])
+                @include('partials.dashboard',['title' => $dashboard['sales'], 'heading'=>__('dash.totalSales')])
+                @include('partials.dashboard',['title' => $dashboard['refunds'], 'heading'=>__('dash.totalRefunds')])
             </div>
         </div>
     </div>
@@ -62,22 +62,22 @@
     </div>
 </div>
 <div class="row row-card-no-pd mt-0 mb-1" data-toggle="tooltip" title="{{__('dash.clickOnValuesForMoreInformation')}}">
-    @include('./partials.dashboard',['link'=>route('customer.index'),
+    @include('partials.dashboard',['link'=>route('customer.index'),
     'title' => $dashboard['customers'], 'heading'=>__('dash.customers'),'class'=>'col-md-2'])
 
-    @include('./partials.dashboard',['link'=>route('supplier.index'),
+    @include('partials.dashboard',['link'=>route('supplier.index'),
     'title' => $dashboard['suppliers'], 'heading'=>__('dash.suppliers'),'class'=>'col-md-2'])
 
-    @include('./partials.dashboard',['link'=>route('purchase.index'),
+    @include('partials.dashboard',['link'=>route('purchase.index'),
     'title' => $dashboard['purchases'], 'heading'=>__('dash.purchases'),'class'=>'col-md-2'])
 
-    @include('./partials.dashboard',['link'=>route('expense.index'),
+    @include('partials.dashboard',['link'=>route('expense.index'),
     'title' => $dashboard['expenses'], 'heading'=>__('dash.expenses'),'class'=>'col-md-2'])
 
-    @include('./partials.dashboard',['link'=>route('warehouse.index'),
+    @include('partials.dashboard',['link'=>route('warehouse.index'),
     'title' => $dashboard['warehouses'], 'heading'=>__('dash.warehouses'),'class'=>'col-md-2'])
 
-    @include('./partials.dashboard',['link'=>route('user.index'),
+    @include('partials.dashboard',['link'=>route('user.index'),
     'title' => $dashboard['users'], 'heading'=>__('dash.users'),'class'=>'col-md-2'])
 
 </div>
@@ -256,5 +256,5 @@ barChartOptions.datasetFill = false;
 barChart.{{isset($_GET['type'])? ucwords($_GET['type']):'Line' }}(ExpenseChart, barChartOptions);
 });
 </script>
-@include('./partials.pageUrl',['pageLink'=>route('dashboard')])
+@include('partials.pageUrl',['pageLink'=>route('dashboard')])
 @endpush

@@ -4,7 +4,7 @@
 @endsection
 
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['links'=> [
+@include('partials.breadcrumbs',['links'=> [
 ['url' =>route('customer.index'),'name' => 'Management'],
 ['url' =>'','name' => 'Customer'],
 ]])
@@ -17,5 +17,5 @@
     </div>
   </div>
 </div>
-@include('./partials.pageUrl',['pageLink'=>route('report.index')])
+@include('partials.pageUrl',['pageLink'=>route('report.index')])
 @endsection

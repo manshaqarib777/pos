@@ -5,7 +5,7 @@
 @endsection
 
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['group'=>__('user.users'),'links'=> [
+@include('partials.breadcrumbs',['group'=>__('user.users'),'links'=> [
 ['url' =>'','name' => __('user.newUser')],
 ]])
 @endpush

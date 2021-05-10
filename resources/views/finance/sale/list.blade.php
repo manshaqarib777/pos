@@ -3,7 +3,7 @@
  {{__('pos.salesManagement')}}
 @endsection
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['group'=>'Finance','links'=> [
+@include('partials.breadcrumbs',['group'=>'Finance','links'=> [
 ['url' =>'','name' => __('pos.salesManagement')],
 ]])
 @endpush

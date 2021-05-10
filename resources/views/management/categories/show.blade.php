@@ -3,7 +3,7 @@
 {{ __('manage.category.detail')}}
 @endsection
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['links'=> [
+@include('partials.breadcrumbs',['links'=> [
 ['url' =>route('category.index'),'name' => __('manage.manage')],
 ['url' =>'','name' => __('manage.category')],
 ]])
@@ -21,7 +21,7 @@
       </div>
       <div class="row">
         <div class="col-md-4 text-center">
-          @include('./partials.upload',[
+          @include('partials.upload',[
           'routeLink'=>route('category.image'),
           'nameId'=>'category_id',
           'item'=> $category]
@@ -41,7 +41,7 @@
           </nav>
           <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-              @include('./partials.buttons',[
+              @include('partials.buttons',[
               'allLink'=>route('category.index'),
               'editLink'=>route('category.edit',$category->id),
               'destroyLink' =>route('category.destroy',$category->id)
@@ -70,10 +70,10 @@
               </table>
             </div>
             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-              @include('./partials.categories.child',['subcategories'=>$category->subcategories])
+              @include('partials.categories.child',['subcategories'=>$category->subcategories])
             </div>
             <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-              @include('./partials.products.list',['products'=>$category->products])
+              @include('partials.products.list',['products'=>$category->products])
             </div>
           </div>
         </div>
@@ -81,5 +81,5 @@
     </div>
   </div>
 </div>
-@include('./partials.pageUrl',['pageLink'=>route('category.index')])
+@include('partials.pageUrl',['pageLink'=>route('category.index')])
 @endsection

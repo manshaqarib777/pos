@@ -3,7 +3,7 @@
  {{__('pos.registersManagement')}}
 @endsection
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['links'=> [
+@include('partials.breadcrumbs',['links'=> [
 ['url' =>'','name' => __('pos.pos')],
 ['url' =>'','name' => __('pos.manageRegisters')],
 ]])

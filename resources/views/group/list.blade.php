@@ -3,7 +3,7 @@
  {{__('group.groupsManagment')}}
 @endsection
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['group'=>__('group.groups'),'links'=> [
+@include('partials.breadcrumbs',['group'=>__('group.groups'),'links'=> [
 ['url' =>'','name' => __('group.manageGroup')],
 ]])
 @endpush

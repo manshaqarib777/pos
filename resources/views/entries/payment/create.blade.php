@@ -3,7 +3,7 @@
 {{__('entries.definePaymentMethod')}}
 @endsection
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['group'=>__('entries.entries'),'links'=> [
+@include('partials.breadcrumbs',['group'=>__('entries.entries'),'links'=> [
 ['url' =>'','name' => __('entries.definePaymentMethod')],
 ]])
 @endpush

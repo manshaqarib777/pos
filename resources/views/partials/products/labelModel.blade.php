@@ -113,13 +113,13 @@
                               <label class="mb-0">{{__('manage.label.height')}}</label>
                               <a href="#" title="{{__('manage.customHightTitle')}}"  data-toggle="tooltip"class="float-right" id="label_height"><i class="fa fa-plug" aria-hidden="true"></i></a>
                               <input type="number" name="height" min="1" placeholder="Height in pixel" class="form-control" id="label_height_input">
-                              @include('./partials.products.labelSize',['name'=>'height','id'=>'label_height_options','default'=>'50'])
+                              @include('partials.products.labelSize',['name'=>'height','id'=>'label_height_options','default'=>'50'])
                             </div>
                             <div class="col-md-6"  title="{{__('manage.customWidthTitle')}}" data-toggle="tooltip">
                               <label>{{__('manage.label.width')}}</label>
                               <a href="#" title="{{__('manage.enterCutomeWidth')}}" data-toggle="tooltip" class="float-right" id="label_width"><i class="fa fa-plug" aria-hidden="true"></i></a>
                               <input type="number" name="width" min="1" placeholder="Width in pixel" class="form-control" id="label_width_input">
-                              @include('./partials.products.labelSize',['name'=>'width','id'=>'label_width_options','default'=>'110'])
+                              @include('partials.products.labelSize',['name'=>'width','id'=>'label_width_options','default'=>'110'])
                             </div>
                           </div>
                         </div>

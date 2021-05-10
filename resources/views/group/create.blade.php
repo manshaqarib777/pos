@@ -5,7 +5,7 @@
 @endsection
 
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['group'=>__('group.groups'),'links'=> [
+@include('partials.breadcrumbs',['group'=>__('group.groups'),'links'=> [
 ['url' =>route('user.index'),'name' => __('group.manageGroup')],
 ['url' =>'','name' => __('group.editGroup')],
 ]])

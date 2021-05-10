@@ -5,7 +5,7 @@
 @endsection
 
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['links'=> [
+@include('partials.breadcrumbs',['links'=> [
 ['url' =>route('category.index'),'name' => __('manage.manage')],
 ['url' =>route('category.show',$category),'name' =>__('manage.category.detail')],
 ['url' =>'','name' => __('manage.edit.category')],
@@ -20,5 +20,5 @@
         </div>
     </div>
 </div>
-@include('./partials.pageUrl',['pageLink'=>route('category.index')])
+@include('partials.pageUrl',['pageLink'=>route('category.index')])
 @endsection

@@ -1,5 +1,5 @@
 
-@include('./partials.head')
+@include('partials.head')
 <body class="bg-warning">
     <div class="wrapper">
         <div class="content">

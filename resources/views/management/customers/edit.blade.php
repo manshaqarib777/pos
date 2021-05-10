@@ -3,7 +3,7 @@
    {{__('manage.edit.customer')}}
 @endsection
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['links'=> [
+@include('partials.breadcrumbs',['links'=> [
 ['url' =>route('customer.index'),'name' => __('manage.manage') ],
 ['url' =>route('customer.show',$customer->id),'name' => __('manage.category.detail')],
 ['url' =>'','name' => __('manage.edit.category')],
@@ -18,5 +18,5 @@
     </div>
   </div>
 </div>
-@include('./partials.pageUrl',['pageLink'=>route('customer.index')])
+@include('partials.pageUrl',['pageLink'=>route('customer.index')])
 @endsection

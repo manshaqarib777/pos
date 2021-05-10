@@ -5,7 +5,7 @@
 @endsection
 
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['links'=> [
+@include('partials.breadcrumbs',['links'=> [
 ['url' =>route('subcategory.index'),'name' => __('manage.manage')],
 ['url' =>'','name' => __('manage.subcategory')],
 ]])
@@ -23,7 +23,7 @@
       </div>
       <div class="row">
         <div class="col-md-4 text-center">
-           @include('./partials.upload',[
+           @include('partials.upload',[
          'routeLink'=>route('subcategory.image'),
          'nameId'=>'subcategory_id',
          'item'=> $subcategory]
@@ -42,7 +42,7 @@
           </nav>
           <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active" id="subcategory-info" role="tabpanel" aria-labelledby="subcategory-info-tab">
-               @include('./partials.buttons',[
+               @include('partials.buttons',[
                   'allLink'=>route('subcategory.index'),
                   'editLink'=>route('subcategory.edit',$subcategory->id),
                   'destroyLink' =>route('subcategory.destroy',$subcategory->id)
@@ -75,7 +75,7 @@
               </table>
             </div>
             <div class="tab-pane fade" id="subcategory-product" role="tabpanel" aria-labelledby="subcategory-product-tab">
-             @include('./partials.products.list',['products'=>$subcategory->products])
+             @include('partials.products.list',['products'=>$subcategory->products])
             </div>
           </div>
         </div>
@@ -84,5 +84,5 @@
   </div>
 </div>
 @endsection
-@include('./partials.pageUrl',['pageLink'=>route('subcategory.index')])
+@include('partials.pageUrl',['pageLink'=>route('subcategory.index')])
 

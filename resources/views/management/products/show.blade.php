@@ -4,7 +4,7 @@
 @endsection
 
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['links'=> [
+@include('partials.breadcrumbs',['links'=> [
 ['url' =>route('product.index'),'name' => __('manage.manage')],
 ['url' =>'','name' => __('manage.product.detail')],
 ]])
@@ -27,7 +27,7 @@
             <small>{{$product->code}}</small>
           </div>
           <hr>
-          @include('./partials.upload',[
+          @include('partials.upload',[
           'routeLink'=>route('product.image'),
           'nameId'=>'product_id',
           'item'=> $product]
@@ -39,9 +39,9 @@
           </div> <!-- product.label -->
           <div class="col-md-8">
             @section('buttons')
-            @include('./partials.products.labelModel',['item'=>$product])
+            @include('partials.products.labelModel',['item'=>$product])
             @endsection
-            @include('./partials.buttons',[
+            @include('partials.buttons',[
             'allLink'=>route('product.index'),
             'editLink'=>route('product.edit',$product->id),
             'destroyLink' =>route('product.destroy',$product->id)
@@ -166,5 +166,5 @@
       </div>
     </div>
   </div>
-  @include('./partials.pageUrl',['pageLink'=>route('product.index')])
+  @include('partials.pageUrl',['pageLink'=>route('product.index')])
   @endsection

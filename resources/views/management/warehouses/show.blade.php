@@ -3,7 +3,7 @@
    {{__('manage.warehouse.detail')}}
 @endsection
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['links'=> [
+@include('partials.breadcrumbs',['links'=> [
 ['url' =>route('warehouse.index'),'name' => __('manage.manage')],
 ['url' =>'','name' => __('manage.warehouse.detail')],
 ]])
@@ -22,7 +22,7 @@
           </nav>
           <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active" id="wh-info" role="tabpanel" aria-labelledby="wh-info-tab">
-              @include('./partials.buttons',[
+              @include('partials.buttons',[
                   'allLink'=>route('warehouse.index'),
                   'editLink'=>route('warehouse.edit',$warehouse->id),
                   'destroyLink' =>route('warehouse.destroy',$warehouse->id)
@@ -61,7 +61,7 @@
               </table>
             </div>
             <div class="tab-pane fade" id="warehouse-products" role="tabpanel" aria-labelledby="warehouse-products-tab">
-                 @include('./partials.products.list',['products'=>$warehouse->products])
+                 @include('partials.products.list',['products'=>$warehouse->products])
             </div>
           </div>
         </div>
@@ -69,5 +69,5 @@
     </div>
   </div>
 </div>
-@include('./partials.pageUrl',['pageLink'=>route('warehouse.index')])
+@include('partials.pageUrl',['pageLink'=>route('warehouse.index')])
 @endsection

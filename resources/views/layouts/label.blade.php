@@ -1,4 +1,4 @@
-@include('./partials.head')
+@include('partials.head')
     <body class="bg-default">
         <div class="wrapper">
             <div class="content">

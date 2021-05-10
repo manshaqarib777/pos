@@ -3,7 +3,7 @@
  {{__('manage.purchase.order.detail')}}
 @endsection
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['links'=> [
+@include('partials.breadcrumbs',['links'=> [
 ['url' =>route('purchase.index'),'name' => __('manage.manage')],
 ['url' =>'','name' => __('manage.purchase.order.detail')],
 ]])
@@ -51,7 +51,7 @@
                                 @section('buttons')
                                 <a class="btn btn-sm btn-default" title="{{__('common.print')}}" href="{{route('purchase.print',$purchase->id)}}" ><i class="fa fa-print fa-fw" aria-hidden="true"></i>{{__('common.print')}}</a>
                                 @endsection
-                                @include('./partials.buttons',[
+                                @include('partials.buttons',[
                                 'allLink'=>route('purchase.index'),
                                 'destroyLink' =>route('purchase.destroy',$purchase->id)
                                 ])
@@ -86,11 +86,11 @@
                 </div>
                 <div class="col-md-8">
                     <h1 class="text-center">{{__('manage.purchase.order.detail')}}</h1>
-                    @include('./partials.purchases.details',['purchase'=>$purchase])
+                    @include('partials.purchases.details',['purchase'=>$purchase])
                 </div>
             </div>
         </div>
     </div>
 </div>
-@include('./partials.pageUrl',['pageLink'=>route('purchase.index')])
+@include('partials.pageUrl',['pageLink'=>route('purchase.index')])
 @endsection

@@ -34,5 +34,5 @@
         <td>  {{$setting->currency}}{{$reportCard['profit']}}</td>
     </tr>
 </table>
-@include('./partials.reports.sale',['orders'=>$reportCard['list']])
+@include('partials.reports.sale',['orders'=>$reportCard['list']])
 @endsection

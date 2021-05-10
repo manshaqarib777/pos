@@ -3,7 +3,7 @@
 {{__('pos.saleOrder')}} {{$sale->reference}}
 @endsection
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['group'=>__('pos.pos'),'links'=> [
+@include('partials.breadcrumbs',['group'=>__('pos.pos'),'links'=> [
 ['url' =>route('sale.index'),'name' => __('pos.salesManagement')],
 ['url' =>'','name' => __('pos.saleOrderDetail')],
 ]])
@@ -33,11 +33,11 @@
               <a class="btn btn-sm btn-default" title="{{__('common.print.a4')}}" href="{{route('printA4',$sale->id)}}" ><i class="fa fa-print fa-fw" aria-hidden="true"></i>{{__('common.print.a4')}}</a>
               <a class="btn btn-sm btn-default" title="{{__('common.print')}}" href="{{route('print',$sale->id)}}" ><i class="fa fa-print fa-fw" aria-hidden="true"></i>{{__('common.print')}}</a>
               @endsection
-              @include('./partials.buttons',[
+              @include('partials.buttons',[
               'allLink'=>route('sale.index'),
               'destroyLink' =>route('sale.destroy',$sale)
               ])
-              @include('./partials.orderInfo',['order'=>$sale])
+              @include('partials.orderInfo',['order'=>$sale])
               <table class="table table-bordered table-striped">
                 <caption>Sale Order Profit</caption>
                 <tr>
@@ -55,7 +55,7 @@
                   <td>{{$sale->lowPricing}} </td>
                 </tr>
               </table>
-              @include('./partials.sales.details',['sale'=>$sale,'links'=>true])
+              @include('partials.sales.details',['sale'=>$sale,'links'=>true])
               <div class="alert-info p-2">
                 <strong>{{__('pos.staffNote')}}</strong>
                 <small>{{$sale->staff_note}}</small>
@@ -92,6 +92,6 @@
     </div>
   </div>
 </div>
-@include('./partials.pageUrl',['pageLink'=>route('sale.index')])
+@include('partials.pageUrl',['pageLink'=>route('sale.index')])
 
 @endsection

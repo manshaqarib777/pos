@@ -5,7 +5,7 @@ Refunds Management
 @endsection
 
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['group'=>'Finance','links'=> [
+@include('partials.breadcrumbs',['group'=>'Finance','links'=> [
 ['url' =>'','name' => 'Refunds Management'],
 ]])
 @endpush

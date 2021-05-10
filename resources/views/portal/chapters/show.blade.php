@@ -3,7 +3,7 @@
 {{__('pos.register')}} {{$chapter->key}}
 @endsection
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['links'=> [
+@include('partials.breadcrumbs',['links'=> [
 ['url' =>route('chapter.index'),'name' => __('pos.pos')],
 ['url' =>'','name' => __('pos.register')],
 ]])
@@ -25,7 +25,7 @@
         </nav>
         <div class="tab-content" id="nav-tabContent">
           <div class="tab-pane fade show active" id="nav-info" role="tabpanel" aria-labelledby="nav-info-tab">
-            @include('./partials.chapter',['chapter'=>$chapter,'info'=>$info])
+            @include('partials.chapter',['chapter'=>$chapter,'info'=>$info])
           </div>
           <div class="tab-pane fade show" id="nav-summary" role="tabpanel" aria-labelledby="nav-summary-tab">
             <table class="table table-bordered table-striped mt-2">
@@ -121,7 +121,7 @@
             </div>
           </div>
           <div class="tab-pane fade" id="nav-sale" role="tabpanel" aria-labelledby="nav-sale-tab">
-            @include('./partials.reports.sale',['orders'=>$chapter->sales])
+            @include('partials.reports.sale',['orders'=>$chapter->sales])
           </div>
           <div class="tab-pane fade" id="nav-refund" role="tabpanel" aria-labelledby="nav-refund-tab">
             <table class="table mt-3">
@@ -154,5 +154,5 @@
     </div>
   </div>
 </div>
-@include('./partials.pageUrl',['pageLink'=>route('chapter.index')])
+@include('partials.pageUrl',['pageLink'=>route('chapter.index')])
 @endsection

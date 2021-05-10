@@ -1,5 +1,5 @@
 @section('title') Print @endsection
-@include('./partials.head')
+@include('partials.head')
 @push('style')
 <link rel="stylesheet" type="text/css" href="{{asset('css/print.custom.css')}}">
 @endpush

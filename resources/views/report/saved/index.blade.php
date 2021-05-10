@@ -3,7 +3,7 @@
 {{__('report.reportManagement')}}
 @endsection
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['group'=>__('report.reports'),'links'=> [
+@include('partials.breadcrumbs',['group'=>__('report.reports'),'links'=> [
 ['url' =>'','name' => __('report.manageSavedReports')],
 ]])
 @endpush

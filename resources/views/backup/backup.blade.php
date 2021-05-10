@@ -3,7 +3,7 @@
  {{__('backup.system.backup.restore')}}
 @endsection
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['links'=> [
+@include('partials.breadcrumbs',['links'=> [
 ['url' =>'','name' => __('backup.backup.restore')],
 ]])
 @endpush

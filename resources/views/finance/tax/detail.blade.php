@@ -3,7 +3,7 @@
 {{__('finance.annuallyTaxChartSummary')}}
 @endsection
 @push('breadcrumbs')
-@include('./partials.breadcrumbs',['group'=>__('finance.finance'),'links'=> [
+@include('partials.breadcrumbs',['group'=>__('finance.finance'),'links'=> [
 ['url' =>'','name' => __('finance.taxChart')],
 ]])
 @endpush
@@ -147,5 +147,5 @@ barChartOptions.datasetFill = false;
 barChart.{{isset($_GET['type'])? ucwords($_GET['type']):'Line' }}(TaxChart, barChartOptions);
 });
 </script>
-@include('./partials.pageUrl',['pageLink'=>route('tax.detail')])
+@include('partials.pageUrl',['pageLink'=>route('tax.detail')])
 @endpush
