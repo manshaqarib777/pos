@@ -84,6 +84,20 @@
                                 @endif
                             </div>
                             <div class="form-group col-md-4">
+                                <label for="country_id">{{ __('user.country') }}</label>
+                                <select class="form-control @if($errors->has('country_id')) is-invalid @endif" name="country_id"  required>
+                                    <option value="">Select Country</option>
+                                    @foreach ($countries as $country)
+                                        <option value="{{ $country->id }}" >{{ $country->name }}</option>
+                                    @endforeach
+                                </select>
+                                @if($errors->has('country_id'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('country_id') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+                            <div class="form-group col-md-4">
                                 <label for="image">{{ __('user.image') }}</label>
                                 <input id="image" type="file" class="p-2 form-control @if($errors->has('image')) is-invalid @endif" name="image">
                                 @if($errors->has('image'))

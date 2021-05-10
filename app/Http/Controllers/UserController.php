@@ -14,6 +14,7 @@ namespace App\Http\Controllers;
 
 use App\Events\LogActivity;
 use App\User;
+use App\Country;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -71,7 +72,8 @@ class UserController extends Controller
     public function edit(User $user)
     {
         $this->authorize('edit', User::class);
-        return view('auth.edit', compact('user'));
+        $countries= Country::all();
+        return view('auth.edit', compact('user','countries'));
     }
 
     /**
@@ -92,6 +94,7 @@ class UserController extends Controller
                 'address' => ['required', 'string', 'max:225'],
                 'phone' => ['required'],
                 'company' => ['required', 'string'],
+                'country_id' => ['required'],
             ]
         );
         if ($request->password) {

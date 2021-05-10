@@ -47,8 +47,8 @@
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->phone }}</td>
                                     <td>{{ $user->company }}</td>
-                                    <td>{{ $user->address }}</td>
                                     <td>{{ $user->country->name }}</td>
+                                    <td>{{ $user->address }}</td>
                                     <td title=" {{ __('user.clickToUpdateUserAuthenticaterFor') }}">
                                         <button onclick="userAuth('{{ $user->id }}')" class="btn btn-link btn-sm p-0">
                                             <i class="fa fa-key fa-lg text-success" aria-hidden="true"></i>

@@ -93,6 +93,20 @@
                                 </span>
                                 @endif
                             </div>
+                            <div class="form-group col-md-6">
+                                <label for="country_id">{{ __('user.country') }}</label>
+                                <select class="form-control @if($errors->has('country_id')) is-invalid @endif" name="country_id"  required>
+                                    <option value="">Select Country</option>
+                                    @foreach ($countries as $country)
+                                        <option value="{{ $country->id }}" {{ ($user->country_id==$country->id)?'selected':'' }}>{{ $country->name }}</option>
+                                    @endforeach
+                                </select>
+                                @if($errors->has('country_id'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('country_id') }}</strong>
+                                </span>
+                                @endif
+                            </div>
                         </div>
                         <div class="col-md-6">
                             <img src="{{asset('storage/'.Auth::user()->image)}}" alt="image profile" class="img img-thumbnail logo-150">

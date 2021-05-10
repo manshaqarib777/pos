@@ -4,12 +4,17 @@ namespace App\Http\Controllers;
 
 
 use App\User;
+use App\Setting;
 use App\Message;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use Auth;
+use App\Http\Controllers\Controller;
+
+use App\Events\LogActivity;
+
 
 class APIController extends Controller
 {
@@ -21,7 +26,7 @@ class APIController extends Controller
         ]);
 
         $credentials = request(['email', 'password']);
-        $credentials['email_verified'] = 1;
+        $credentials['isActive'] = 1;
         if (!Auth::attempt($credentials))
             return response()->json([
                 'message' => 'Unauthorized'
@@ -80,6 +85,7 @@ class APIController extends Controller
     }
     public function forgot(Request $request)
     {
+        $setting = Setting::find('1');
         $input =  $request->all();
         if (User::where('email', '=', $request->email)->count() > 0) {
             // user found
@@ -90,7 +96,7 @@ class APIController extends Controller
             $subject = "Reset Password Request";
             $msg = "Your New Password is : " . $autopass;
 
-            $headers = "From: " . $gs->from_name . "<" . $gs->from_email . ">";
+            $headers = "From: " . $setting->site_name . "<" . $setting->default_email . ">";
             mail($request->email, $subject, $msg, $headers);
             return response()->json('Your Password Reseted Successfully. Please Check your email for new Password.');
         } else {
@@ -140,16 +146,18 @@ class APIController extends Controller
 
     public function register(Request $request)
     {
-
         $rules = [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'address' => ['required', 'string', 'max:225'], 'phone' => ['required'],
             'company' => ['required', 'string'],
+            'phone' => ['required', 'string'],
+            'country_id' => ['required'],
         ];
 
-        $validator = Validator::make(Input::all(), $rules);
+        $validator = Validator::make($request->all(), $rules);
+        $token = md5(time().$request->name.$request->email);
 
         if ($validator->fails()) {
             return response()->json(array('errors' => $validator->getMessageBag()->toArray()), 403);
@@ -173,13 +181,23 @@ class APIController extends Controller
                 'address' => $data['address'],
                 'phone' => $data['phone'],
                 'company' => $data['company'],
+                'country_id' => $data['country_id'],
                 'image' => $image,
                 'isActive' => 0,
-                'password' => Hash::make($data['password']),
+                'password' => bcrypt($data['password']),
             ]
         );
+        $setting = Setting::find('1');
 
-        event(new LogActivity($user->name, 'New user created', 'User'));
+        $to = $request->email;
+        $subject = 'Verify your email address.';
+        $msg = "Dear Customer,<br> We noticed that you need to verify your email address. <a href=".url('register/verify/'.$token).">Simply click here to verify. </a>";
+        $headers = "From: $setting->site_name <$setting->default_email> \r\n";
+        $headers .= "Reply-To: $setting->site_name <$setting->default_email> \r\n";
+        $headers .= "MIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+        mail($to,$subject,$msg,$headers);
+        event(new LogActivity($user->name, 'New user created', 'User',$user));
 
         $message = array("success" => "ok", "message" => "Place check your email for verification");
         return response()->json($message, 200);
@@ -346,8 +364,8 @@ class APIController extends Controller
         $data->status = $request->status;
         $data->update();
 
-        $headers = "From: $gs->from_name <$gs->from_email> \r\n";
-        $headers .= "Reply-To: $gs->from_name <$gs->from_email> \r\n";
+        $headers = "From: $setting->from_name <$setting->from_email> \r\n";
+        $headers .= "Reply-To: $setting->from_name <$setting->from_email> \r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
