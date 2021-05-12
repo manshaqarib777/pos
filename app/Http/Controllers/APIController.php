@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use Auth;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Str;
 
 use App\Events\LogActivity;
 
@@ -90,7 +91,7 @@ class APIController extends Controller
         if (User::where('email', '=', $request->email)->count() > 0) {
             // user found
             $admin = User::where('email', '=', $request->email)->firstOrFail();
-            $autopass = str_random(8);
+            $autopass = Str::random(8);
             $input['password'] = bcrypt($autopass);
             $admin->update($input);
             $subject = "Reset Password Request";
